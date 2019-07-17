@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Lookup a definition","Looking up the definition of 'apple'","ERROR","2019-07-17T23:31:54.349+07:00[Asia/Bangkok]","0.0","50.04"
+"Lookup a definition","Looking up the definition of 'pear'","ERROR","2019-07-17T23:32:44.435+07:00[Asia/Bangkok]","0.0","47.71"

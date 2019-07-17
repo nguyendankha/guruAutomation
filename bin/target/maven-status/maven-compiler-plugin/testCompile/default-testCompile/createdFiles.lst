@@ -1,0 +1,4 @@
+com\demo\banking\steps\DefinitionSteps.class
+com\demo\banking\steps\serenity\EndUserSteps.class
+com\demo\banking\pages\DictionaryPage.class
+com\demo\banking\DefinitionTestSuite.class
