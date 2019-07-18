@@ -38,6 +38,5 @@ public class EndUserRegisterEmailSteps {
 		System.out.println("User Password: " + accessDetailPage.getUserPassword());
 		User.setUserPassword(accessDetailPage.getUserPassword());
 		return User.getUserPassword();
-		
 	}
 }
