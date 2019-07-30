@@ -9,7 +9,6 @@ import net.thucydides.core.annotations.Step;
 public class EndUserRegisterEmailSteps {
 	DemoHomepage demoHomepage;
 	AccessDetailPage accessDetailPage;
-	User user;
 	
 	@Step
 	public void is_on_the_demo_home_page() {

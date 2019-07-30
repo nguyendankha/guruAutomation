@@ -11,6 +11,9 @@ public class GuruManagerHomepage extends PageObject{
 	@FindBy(xpath = "//a[contains(text(),'New Customer')]")
 	private WebElementFacade NEW_CUSTOMER_MENU;
 	
+	@FindBy(xpath = "//a[contains(text(),'New Account')]")
+	private WebElementFacade NEW_ACCOUNT_MENU;
+	
 	public String get_welcome_text() {
 		return WELCOME_TEXT.getText();
 	}
@@ -21,5 +24,9 @@ public class GuruManagerHomepage extends PageObject{
 	
 	public void click_new_customer_menu() {
 		NEW_CUSTOMER_MENU.click();
+	}
+	
+	public void click_new_account_menu() {
+		NEW_ACCOUNT_MENU.click();
 	}
 }

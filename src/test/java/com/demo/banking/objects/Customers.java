@@ -1,15 +1,20 @@
 package com.demo.banking.objects;
 
+import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 
 import org.joda.time.DateTime;
 
-public class Customers {
+public class Customers implements Serializable{
+	private static final long serialVersionUID = -3179141454515278854L;
 	// *********Customer information*********
+	private String id;
 	private String name;
 	private String gender;
 	private String dateOfBirth;
+	private String dobYear;
 	private String address;
 	private String city;
 	private String state;
@@ -17,10 +22,43 @@ public class Customers {
 	private String mobileNumber;
 	private String email;
 	private String password;
+	private Account[] accounts;
+	
+	public Customers() {}
+	
+	public Customers(String customerID) {
+		this.id = customerID;
+	}
+
+	public Customers(String id, String name, String gender, String dateOfBirth, String dobYear, String address,
+			String city, String state, String pin, String mobileNumber, String email, String password,
+			Account[] accounts) {
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.dobYear = dobYear;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.pin = pin;
+		this.mobileNumber = mobileNumber;
+		this.email = email;
+		this.password = password;
+		this.accounts = accounts;
+	}
 
 	// *********Customer getters/setters*********
 	public String getCustomerName() {
 		return name;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public void setCustomerName(String customerName) {
@@ -41,6 +79,14 @@ public class Customers {
 
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getDobYear() {
+		return dobYear;
+	}
+
+	public void setDobYear(String dobYear) {
+		this.dobYear = dobYear;
 	}
 
 	public String getAddress() {
@@ -99,18 +145,28 @@ public class Customers {
 		this.password = password;
 	}
 
+	public Account[] getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(Account[] accounts) {
+		this.accounts = accounts;
+	}
+
+
+
 	// **************Methods***************
 	// Random generator
 	private String[] genders = new String[] { "male", "female" };
 	private String[] names = new String[] { "Frank", "Marcos", "Cris", "Daniel", "Sandy", "Lora" };
-	private String[] addresses = new String[] { "Nguyen Trong Tuyen str.", "Le Van Luong str.", "Nguyen Van Troi str.",
-			"Nguyen Van Linh str." };
+	private String[] addresses = new String[] { "Nguyen Trong Tuyen str", "Le Van Luong str", "Nguyen Van Troi str",
+			"Nguyen Van Linh str" };
 	private String[] states = new String[] { "North", "East", "South", "West", "South-East", "North-West" };
 	private String[] cities = new String[] { "Ho Chi Minh", "Ha Noi", "Vung Tau", "Gia Lai", "Tuyen Quang" };
 	private String[] DOBs = new String[] { "01-01-1970", "30-04-1970", "01-03-1971", "01-01-1969", "01-02-1970",
 			"01-02-1971", "31-12-1970", "31-12-1969", "01-09-1950", "01-08-2000", "29-02-2004" };
 	private String[] mobilePhones = new String[] { "1234509876", "0987612345", "1234567890" };
-	private String[] pins = new String[] { "100", "250", "369", "859", "716" };
+	private String[] pins = new String[] { "100000", "205650", "256369", "025859", "712036" };
 
 	// Generate customer information
 	public void createCustomerInformation() {
@@ -124,7 +180,8 @@ public class Customers {
 		// Generate DOB
 		String dobDate = DOBs[rand.nextInt(DOBs.length - 1)];
 		String[] customerDOBDate = dobDate.split("-");
-		this.setDateOfBirth(customerDOBDate[0] + customerDOBDate[1] + customerDOBDate[2]);
+		this.setDateOfBirth(customerDOBDate[0] + customerDOBDate[1]);
+		this.setDobYear(customerDOBDate[2]);
 		// Generate address
 		this.setAddress(addresses[rand.nextInt(addresses.length - 1)]);
 		// Generate city
@@ -180,5 +237,19 @@ public class Customers {
 		long time = date.getTime();
 		return time;
 	}
+
+	@Override
+	public String toString() {
+		return "Customers [id=" + id + ", name=" + name + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
+				+ ", dobYear=" + dobYear + ", address=" + address + ", city=" + city + ", state=" + state + ", pin="
+				+ pin + ", mobileNumber=" + mobileNumber + ", email=" + email + ", password=" + password + ", accounts="
+				+ Arrays.toString(accounts) + ", getCustomerName()=" + getCustomerName() + ", getId()=" + getId()
+				+ ", getGender()=" + getGender() + ", getDateOfBirth()=" + getDateOfBirth() + ", getDobYear()="
+				+ getDobYear() + ", getAddress()=" + getAddress() + ", getCity()=" + getCity() + ", getState()="
+				+ getState() + ", getPin()=" + getPin() + ", getMobileNumber()=" + getMobileNumber() + ", getEmail()="
+				+ getEmail() + ", getPassword()=" + getPassword() + ", getAccounts()=" + Arrays.toString(getAccounts())
+				+ ", getCurrentTime()=" + getCurrentTime() + "]";
+	}
+	
 
 }
