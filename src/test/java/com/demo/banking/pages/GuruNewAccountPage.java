@@ -14,6 +14,9 @@ public class GuruNewAccountPage extends PageObject{
 	@FindBy(xpath = "//select[@name='selaccount']")
 	private WebElementFacade ACCOUNT_TYPE_DROPDOWN;
 	
+	@FindBy(xpath = "//input[@name='inideposit']")
+	private WebElementFacade INIT_DEPOSIT_TEXTBOX;
+	
 	@FindBy(xpath = "//input[@name='button2']")
 	private WebElementFacade SUBMIT_CREATE_ACCOUNT_BUTTON;
 	
@@ -24,6 +27,11 @@ public class GuruNewAccountPage extends PageObject{
 	
 	public void select_saving_account_type() {
 		ACCOUNT_TYPE_DROPDOWN.selectByValue("Savings");
+	}
+	
+	public void enter_init_deposit_in_create_account_page(String initDeposit) {
+		INIT_DEPOSIT_TEXTBOX.clear();
+		INIT_DEPOSIT_TEXTBOX.type(initDeposit);
 	}
 	
 	public void click_submit_create_account_button() {

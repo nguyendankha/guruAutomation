@@ -159,7 +159,7 @@ public class EndUserLoginSteps {
 		System.out.println("Before write ID: " + customers.toString());
 		customer.add(customers);
 		try {
-			FileOutputStream fos = new FileOutputStream(new File("F:\\serenity\\DemoBanking\\customerData.txt"));
+			FileOutputStream fos = new FileOutputStream(new File("customerData.txt"));
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(customer);
 			oos.close();
@@ -183,7 +183,7 @@ public class EndUserLoginSteps {
 	public Customers use_created_customer_for_create_account() {
 		ArrayList<Customers> customers = new ArrayList<>();
 		try {
-			FileInputStream fis = new FileInputStream(new File("F:\\serenity\\DemoBanking\\customerData.txt"));
+			FileInputStream fis = new FileInputStream(new File("customerData.txt"));
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			customers = (ArrayList) ois.readObject();
 			System.out.println("Array size: " + customers.size());

@@ -22,7 +22,7 @@ public class Customers implements Serializable{
 	private String mobileNumber;
 	private String email;
 	private String password;
-	private Account[] accounts;
+	private Account accounts;
 	
 	public Customers() {}
 	
@@ -32,7 +32,7 @@ public class Customers implements Serializable{
 
 	public Customers(String id, String name, String gender, String dateOfBirth, String dobYear, String address,
 			String city, String state, String pin, String mobileNumber, String email, String password,
-			Account[] accounts) {
+			Account accounts) {
 		this.id = id;
 		this.name = name;
 		this.gender = gender;
@@ -145,11 +145,11 @@ public class Customers implements Serializable{
 		this.password = password;
 	}
 
-	public Account[] getAccounts() {
+	public Account getAccounts() {
 		return accounts;
 	}
 
-	public void setAccounts(Account[] accounts) {
+	public void setAccounts(Account accounts) {
 		this.accounts = accounts;
 	}
 
@@ -243,11 +243,11 @@ public class Customers implements Serializable{
 		return "Customers [id=" + id + ", name=" + name + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
 				+ ", dobYear=" + dobYear + ", address=" + address + ", city=" + city + ", state=" + state + ", pin="
 				+ pin + ", mobileNumber=" + mobileNumber + ", email=" + email + ", password=" + password + ", accounts="
-				+ Arrays.toString(accounts) + ", getCustomerName()=" + getCustomerName() + ", getId()=" + getId()
+				+ accounts + ", getCustomerName()=" + getCustomerName() + ", getId()=" + getId()
 				+ ", getGender()=" + getGender() + ", getDateOfBirth()=" + getDateOfBirth() + ", getDobYear()="
 				+ getDobYear() + ", getAddress()=" + getAddress() + ", getCity()=" + getCity() + ", getState()="
 				+ getState() + ", getPin()=" + getPin() + ", getMobileNumber()=" + getMobileNumber() + ", getEmail()="
-				+ getEmail() + ", getPassword()=" + getPassword() + ", getAccounts()=" + Arrays.toString(getAccounts())
+				+ getEmail() + ", getPassword()=" + getPassword() + ", getAccounts()=" + getAccounts()
 				+ ", getCurrentTime()=" + getCurrentTime() + "]";
 	}
 	
