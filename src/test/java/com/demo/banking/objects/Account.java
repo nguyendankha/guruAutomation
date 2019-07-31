@@ -84,16 +84,4 @@ public class Account extends Customers{
 		
 	}
 	
-	public Account setAccountInformationToFile() {
-		return null;
-	}
-	
-	public static void main(String[] args) {
-		Account acc = new Account("123456", "1", 0, 0, 5000);
-		//System.out.println(acc.generateInitDepositAmount());
-		System.out.println(acc.getCurrentAmountAfterCreateAccount(acc.generateInitDepositAmount()));
-		System.out.println(acc.getCurrentAmount());
-		System.out.println(acc.getCurrentAmountAfterDeposit(acc.getCurrentAmount(), acc.getCurrentAmount()));
-	}
-	
 }
